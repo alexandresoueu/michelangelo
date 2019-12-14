@@ -8,6 +8,7 @@ const data = {
 }
 
 const surname = data.cars.reduce((acc, cur) => {
-   const lastnames = Object.keys(cur)
-    console.log(lastnames.join())
+   const lastnames = Object.keys(cur).toString()
+   
+    console.log(lastnames)
 }, '')
