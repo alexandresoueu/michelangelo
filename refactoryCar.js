@@ -8,7 +8,8 @@ const data = {
 }
 
 const surname = data.cars.reduce((acc, cur) => {
-   const lastnames = Object.keys(cur).toString()
-   
-    console.log(lastnames)
-}, '')
+   const lastnames = Object.keys(cur).filter(name => name !== 'nsu').toString()
+   return `${acc} ${lastnames}`
+}, '').trim()
+
+console.log(surname == 'Maria de Paz Santana')
