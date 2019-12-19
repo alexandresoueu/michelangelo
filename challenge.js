@@ -63,24 +63,50 @@ const responseLegado = {
 // ========= IMPLEMENTAÇÂO ============
 // ====================================
 
-// ...
+const names = responseLegado.content.map(function(cb) {
+    const getName = cb.info.user.name 
+    return getName
+})
+
+const colors = responseLegado.content.map(function(cb) {
+    const getColors = cb.info.shoes
+    console.log(getColors)
+})
+
+const getCars = responseLegado.content.map(function(cb) {
+    const cars = cb.info
+    return cars.cars
+})
+
+const surname = getCars.reduce((acc, cur) => {
+    const lastnames = Object.keys(cur)
+    console.log(lastnames)
+    return `${acc} ${lastnames}`
+    
+ }, '').trim()
+ 
+ console.log(colors)
+
+
+ 
+
 
 // ====================================
 // ======= TESTES UNITÁRIOS ===========
 // ====================================
 
-{
-    const input = responseLegado
-    const expected = {
-        'Rafael Paulo da Silva Queiroz' : 'green,blue,red',
-        'Ale Santana dos Santos Reis': 'green,blue',
-    }
+// {
+//     const input = responseLegado
+//     const expected = {
+//         'Rafael Paulo da Silva Queiroz' : 'green,blue,red',
+//         'Ale Santana dos Santos Reis': 'green,blue',
+//     }
 
-    const result = // TODO: implementar
+//     const result = // TODO: implementar
 
-    if (JSON.stringify(result) !== JSON.stringify(expected)) {
-        throw Error('should return expected contract')
-    } else {
-        console.log('Success!')
-    }
-}
+//     if (JSON.stringify(result) !== JSON.stringify(expected)) {
+//         throw Error('should return expected contract')
+//     } else {
+//         console.log('Success!')
+//     }
+// }
