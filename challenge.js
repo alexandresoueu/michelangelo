@@ -62,20 +62,11 @@ const responseLegado = {
 // ====================================
 // ========= IMPLEMENTAÇÂO ============
 // ====================================
+const body = responseLegado.content
 
-const names = responseLegado.content.map(function(cb) {
+const names = body.map(cb => {
     const getName = cb.info.user.name 
     return getName
-})
-
-const colors = responseLegado.content.map(function(cb) {
-    const getColors = cb.info.shoes
-    console.log(getColors)
-})
-
-const getCars = responseLegado.content.map(function(cb) {
-    const cars = cb.info
-    return cars.cars
 })
 
 const surname = getCars.reduce((acc, cur) => {
@@ -84,10 +75,22 @@ const surname = getCars.reduce((acc, cur) => {
     return `${acc} ${lastnames}`
     
  }, '').trim()
+
+const getCars = body.map(function(cb) {
+    const cars = cb.info
+    return cars.cars
+})
  
- console.log(colors)
+const getColors = body.map(cb => {
+    const color = cb.info.shoes
+    const colors = c => c.color
+    const result = color.map(colors).toString()
+    return result
+})
 
 
+
+console.log(surname)
  
 
 
